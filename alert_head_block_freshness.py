@@ -15,7 +15,7 @@ import sys
 from datetime import datetime, timedelta
 
 
-MAX_ALLOWED_DELAY_SECONDS = 0
+MAX_ALLOWED_DELAY_SECONDS = 60
 
 def alert_head_block_freshness(http_endpoint, alert_email):
     """
@@ -24,9 +24,9 @@ def alert_head_block_freshness(http_endpoint, alert_email):
     alert_email -- email address to send an alert in case of stale chain
     """
 
-    print "\n\n**********************************"
+    print "\n**********************************"
     print "current time = ", datetime.utcnow()
-    print "\nhttps_endpoint =", http_endpoint
+    print "https_endpoint =", http_endpoint
     print "alert_email =", alert_email
 
     r = None
@@ -55,7 +55,7 @@ def alert_head_block_freshness(http_endpoint, alert_email):
 
     # send email alert if the time delta is no less than 60 seconds
     if time_diff_in_seconds >= MAX_ALLOWED_DELAY_SECONDS:
-        print "\nhead_block_lagged_by", time_diff_in_seconds, "seconds"
+        print "\nhead_block_lagged_by", time_diff_in_seconds, "seconds, sending alert..."
         os.system('echo "Out of sync BP node behind endpoint = {endpoint}" | mail -s "Alert: EOS blockchain is outdated!" {email}'
 		.format(endpoint=http_endpoint, email=alert_email))
         sys.exit(1)
