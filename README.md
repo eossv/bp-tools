@@ -2,9 +2,8 @@
 # 1. alert_head_block_freshness.py
 
 ## Purpose
-This script is to monitor if head_block_time of a given EOS blockchain is up to date. In the case of
-head_block_time is X seconds older than current utc timestamp, this script would trigger an email 
-alert assuming something bad is happening, either the local blockchain is not full synced with global 
+This script is to alert if head_block_time of a EOS blockchain behind a given http/s endpoint is up to date. In the case of
+head_block_time is MAX_ALLOWED_DELAY_SECONDS (default 60 seconds) older than current system utc timestamp, this script would trigger an email alert assuming something bad is happening, e.g. either the local blockchain is not full synced with global 
 blockchain, or the global blockchain is halted for whatever reason.
 
 ## How to use it:
