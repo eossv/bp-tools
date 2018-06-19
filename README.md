@@ -1,7 +1,13 @@
 
-# alert_head_block_freshness.py
+# 1. alert_head_block_freshness.py
 
-How to use it:
+## Purpose
+This script is to monitor if head_block_time of a given EOS blockchain is up to date. In the case of
+head_block_time is X seconds older than current utc timestamp, this script would trigger an email 
+alert assuming something bad is happening, either the local blockchain is not full synced with global 
+blockchain, or the global blockchain is halted for whatever reason.
+
+## How to use it:
 $ python alert_head_block_freshness.py -h
 usage: alert_head_block_freshness.py [-h] [-he HTTP_ENDPOINT] -ae ALERT_EMAIL
 
@@ -16,7 +22,7 @@ required arguments:
   -ae ALERT_EMAIL, --alert_email ALERT_EMAIL
                         email address to send alert to
 
-Alert example:
+## Alert example:
 $ python alert_head_block_freshness.py --alert_email sanford.young@gmail.com
 
 **********************************
