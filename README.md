@@ -6,6 +6,11 @@ This script is to alert if head_block_time of a EOS blockchain behind a given ht
 head_block_time is MAX_ALLOWED_DELAY_SECONDS (default 60 seconds) older than current system utc timestamp, this script would trigger an email alert assuming something bad is happening, e.g. either the local blockchain is not full synced with global 
 blockchain, or the global blockchain is halted for whatever reason.
 
+## Prerequisite
+1: Configure a Linux server to send email:
+https://rianjs.net/2013/08/send-email-from-linux-server-using-gmail-and-ubuntu-two-factor-authentication
+
+
 ## How to use it:
 **$ python alert_head_block_freshness.py -h**
 
