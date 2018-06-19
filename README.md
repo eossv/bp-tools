@@ -34,7 +34,9 @@ $ python alert_head_block_freshness.py --alert_email sanford.young@gmail.com
 
 **********************************
 current time =  2018-06-19 06:52:41.307859
+
 https_endpoint = http://127.0.0.1:80/v1/chain/get_info
+
 alert_email = sanford.young@gmail.com
 
 
