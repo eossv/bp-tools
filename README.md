@@ -8,7 +8,7 @@ alert assuming something bad is happening, either the local blockchain is not fu
 blockchain, or the global blockchain is halted for whatever reason.
 
 ## How to use it:
-$ python alert_head_block_freshness.py -h
+**$ python alert_head_block_freshness.py -h**
 
 usage: alert_head_block_freshness.py [-h] [-he HTTP_ENDPOINT] -ae ALERT_EMAIL
 
@@ -30,7 +30,7 @@ required arguments:
 
 
 ## Alert example:
-$ python alert_head_block_freshness.py --alert_email sanford.young@gmail.com
+**$ python alert_head_block_freshness.py --alert_email sanford.young@gmail.com**
 
 **********************************
 current time =  2018-06-19 06:52:41.307859
