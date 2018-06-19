@@ -9,6 +9,7 @@ blockchain, or the global blockchain is halted for whatever reason.
 
 ## How to use it:
 $ python alert_head_block_freshness.py -h
+
 usage: alert_head_block_freshness.py [-h] [-he HTTP_ENDPOINT] -ae ALERT_EMAIL
 
 Check data freshness of a given blockchain based on http/s call
