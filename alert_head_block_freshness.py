@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 '''
-This script is to monitor if the head block time of a EOS blockchain is up to date. In the case of
-head_block_time is more than 60 seconds older than current utc timestamp, we will trigger an email 
+This script is to monitor if head_block_time of a given EOS blockchain is up to date. In the case of
+head_block_time is X seconds older than current utc timestamp, this script would trigger an email 
 alert assuming something bad is happening, either the local blockchain is not full synced with global 
 blockchain, or the global blockchain is halted for whatever reason.
 
@@ -14,6 +14,8 @@ import os
 import sys
 from datetime import datetime, timedelta
 
+
+MAX_ALLOWED_DELAY_SECONDS = 0
 
 def alert_head_block_freshness(http_endpoint, alert_email):
     """
@@ -52,7 +54,7 @@ def alert_head_block_freshness(http_endpoint, alert_email):
     time_diff_in_seconds = time_diff.total_seconds()
 
     # send email alert if the time delta is no less than 60 seconds
-    if time_diff_in_seconds >= 60:
+    if time_diff_in_seconds >= MAX_ALLOWED_DELAY_SECONDS:
         print "\nhead_block_lagged_by", time_diff_in_seconds, "seconds"
         os.system('echo "Out of sync BP node behind endpoint = {endpoint}" | mail -s "Alert: EOS blockchain is outdated!" {email}'
 		.format(endpoint=http_endpoint, email=alert_email))
