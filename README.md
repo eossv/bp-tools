@@ -15,6 +15,7 @@ usage: alert_head_block_freshness.py [-h] [-he HTTP_ENDPOINT] -ae ALERT_EMAIL
 Check data freshness of a given blockchain based on http/s call
 
 optional arguments:
+
   -h, --help            show this help message and exit
   
   
@@ -23,6 +24,7 @@ optional arguments:
 
 
 required arguments:
+
   -ae ALERT_EMAIL, --alert_email ALERT_EMAIL
                         email address to send alert to
 
