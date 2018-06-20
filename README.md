@@ -1,5 +1,8 @@
+# 1. Running environment
+Ubuntu 16.04
+Python 2.7.12
 
-# 1. alert_head_block_freshness.py
+# 2. EOS chain freshness check: alert_head_block_freshness.py
 
 ## Purpose
 This script is to alert if head_block_time of a EOS blockchain behind a given http/s endpoint is up to date. In the case of
