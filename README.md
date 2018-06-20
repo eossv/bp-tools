@@ -1,6 +1,8 @@
 # 1. Running environment
 Ubuntu 16.04
+
 Python 2.7.12
+
 
 # 2. EOS chain freshness check: alert_head_block_freshness.py
 
