@@ -59,3 +59,7 @@ current_utc_time = 2018-06-19T06:52:41
 
 
 head_block_lagged_by 844768.357811 seconds, sending alert...
+
+
+## Bonus Point
+If your alert_email happens to be tied to incident response platform, e.g. pagerduty, you can easily use it to trigger voice call / SMS / escalation policy etc.
