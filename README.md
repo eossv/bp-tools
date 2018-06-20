@@ -11,7 +11,7 @@ head_block_time is MAX_ALLOWED_DELAY_SECONDS (default 60 seconds) older than cur
 blockchain, or the global blockchain is halted for whatever reason.
 
 ## Prerequisite
-**Configure a Linux server to send email:**
+If you don't have mail service configed on your host yet, please refer to **Configure a Linux server to send email:**
 
 https://rianjs.net/2013/08/send-email-from-linux-server-using-gmail-and-ubuntu-two-factor-authentication
 
