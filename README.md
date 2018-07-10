@@ -1,12 +1,20 @@
+# 1. Running environment
+	Ubuntu 16.04
+	Python 2.7.12
 
-# 1. alert_head_block_freshness.py
+
+# 2. EOS chain freshness check: alert_head_block_freshness.py
 
 ## Purpose
 This script is to alert if head_block_time of a EOS blockchain behind a given http/s endpoint is up to date. In the case of
 head_block_time is MAX_ALLOWED_DELAY_SECONDS (default 60 seconds) older than current system utc timestamp, this script would trigger an email alert assuming something bad is happening, e.g. either the local blockchain is not full synced with global 
 blockchain, or the global blockchain is halted for whatever reason.
 
-## How to use it:
+## Prerequisite
+If you don't have mail service configed on your host yet, please refer to [configure a Linux server to send email](https://rianjs.net/2013/08/send-email-from-linux-server-using-gmail-and-ubuntu-two-factor-authentication)
+
+
+## How to use it
 **$ python alert_head_block_freshness.py -h**
 
 usage: alert_head_block_freshness.py [-h] [-he HTTP_ENDPOINT] -ae ALERT_EMAIL
@@ -28,7 +36,7 @@ required arguments:
                         email address to send alert to
 
 
-## Alert example:
+## Alert example
 **$ python alert_head_block_freshness.py --alert_email sanford.young@gmail.com**
 
 **********************************
@@ -48,3 +56,7 @@ current_utc_time = 2018-06-19T06:52:41
 
 
 head_block_lagged_by 844768.357811 seconds, sending alert...
+
+
+## Bonus point
+If your alert_email happens to be tied to incident response platform, e.g. **pagerduty**, you can seamlessly use it to trigger voice call / SMS / escalation policy etc.
