@@ -34,6 +34,13 @@ docker exec nodeos-bios cleos wallet unlock -n $WALLET_NAME --password $WALLET_P
 echo "claiming bp rewards..."
 docker exec nodeos-bios cleos system claimrewards eossv12eossv > $HOME_DIR/logs/claim_bp_rewards.log 2>&1
 
+EXITCODE=$?
+if [ $EXITCODE -ne 0 ];then
+   echo "ERROR: docker claimrewards failed!"
+else
+   echo ""
+fi
+
 count=$(grep -i "ERROR" -c $HOME_DIR/logs/claim_bp_rewards.log)
 if [ "$count" -ne 0  ]; then
 	echo "something wrong when claiming rewards...sending alert..."
